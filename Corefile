@@ -1,0 +1,5 @@
+.:53 {
+    hook
+    log
+    errors
+}
