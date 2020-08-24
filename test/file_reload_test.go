@@ -17,7 +17,7 @@ func TestZoneReload(t *testing.T) {
 	}
 	defer rm()
 
-	// Corefile_bak with two stanzas
+	// Corefile with two stanzas
 	corefile := `example.org:0 {
        file ` + name + ` {
            reload 1s

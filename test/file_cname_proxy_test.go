@@ -17,7 +17,7 @@ func TestZoneExternalCNAMELookupWithoutProxy(t *testing.T) {
 	}
 	defer rm()
 
-	// Corefile_bak with for example without proxy section.
+	// Corefile with for example without proxy section.
 	corefile := `example.org:0 {
        file ` + name + `
 }
@@ -49,7 +49,7 @@ func TestZoneExternalCNAMELookupWithProxy(t *testing.T) {
 	}
 	defer rm()
 
-	// Corefile_bak with for example proxy section.
+	// Corefile with for example proxy section.
 	corefile := `.:0 {
        file ` + name + ` example.org {
 	       upstream

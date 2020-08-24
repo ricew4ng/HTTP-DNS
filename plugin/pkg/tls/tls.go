@@ -12,7 +12,7 @@ import (
 
 // NewTLSConfigFromArgs returns a TLS config based upon the passed
 // in list of arguments. Typically these come straight from the
-// Corefile_bak.
+// Corefile.
 // no args
 //  - creates a Config with no cert and using system CAs
 //  - use for a client that talks to a server with a public signed cert (CA installed in system)

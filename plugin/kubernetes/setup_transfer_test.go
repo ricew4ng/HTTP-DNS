@@ -8,7 +8,7 @@ import (
 
 func TestKubernetesParseTransfer(t *testing.T) {
 	tests := []struct {
-		input     string // Corefile_bak data as string
+		input     string // Corefile data as string
 		expected  string
 		shouldErr bool
 	}{

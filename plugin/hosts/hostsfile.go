@@ -96,7 +96,7 @@ type Hostsfile struct {
 	// hosts maps for lookups
 	hmap *Map
 
-	// inline saves the hosts file that is inlined in a Corefile_bak.
+	// inline saves the hosts file that is inlined in a Corefile.
 	inline *Map
 
 	// path to the hosts file
@@ -262,7 +262,7 @@ var (
 		Namespace: plugin.Namespace,
 		Subsystem: "hosts",
 		Name:      "entries_count",
-		Help:      "The combined number of entries in hosts and Corefile_bak.",
+		Help:      "The combined number of entries in hosts and Corefile.",
 	}, []string{})
 
 	hostsReloadTime = prometheus.NewGauge(prometheus.GaugeOpts{

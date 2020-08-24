@@ -26,7 +26,7 @@ var f = func(ctx context.Context, opt option.ClientOption) (gcpDNS, error) {
 	if opt != nil {
 		client, err = gcp.NewService(ctx, opt)
 	} else {
-		// if credentials file is not provided in the Corefile_bak
+		// if credentials file is not provided in the Corefile
 		// authenticate the client using env variables
 		client, err = gcp.NewService(ctx)
 	}
@@ -65,7 +65,7 @@ func setup(c *caddy.Controller) error {
 			switch c.Val() {
 			case "upstream":
 				c.RemainingArgs() // eats args
-			// if filepath is provided in the Corefile_bak use it to authenticate the dns client
+			// if filepath is provided in the Corefile use it to authenticate the dns client
 			case "credentials":
 				if c.NextArg() {
 					opt = option.WithCredentialsFile(c.Val())

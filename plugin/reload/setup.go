@@ -19,7 +19,7 @@ func init() { plugin.Register("reload", setup) }
 // the info reload is global to all application, whatever number of reloads.
 // it is used to transmit data between Setup and start of the hook called 'onInstanceStartup'
 // channel for QUIT is never changed in purpose.
-// WARNING: this data may be unsync after an invalid attempt of reload Corefile_bak.
+// WARNING: this data may be unsync after an invalid attempt of reload Corefile.
 var (
 	r              = reload{dur: defaultInterval, u: unused, quit: make(chan bool)}
 	once, shutOnce sync.Once

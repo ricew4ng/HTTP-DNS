@@ -17,7 +17,7 @@ func TestZoneSRVAdditional(t *testing.T) {
 	}
 	defer rm()
 
-	// Corefile_bak with for example without proxy section.
+	// Corefile with for example without proxy section.
 	corefile := `example.org:0 {
        file ` + name + `
 }

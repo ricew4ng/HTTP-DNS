@@ -40,7 +40,7 @@ func setup(c *caddy.Controller) error {
 		// And the order of that provider chain is as follows:
 		// Static AWS keys -> Environment Variables -> Credentials file -> IAM role
 		// With that said, even though a user doesn't define any credentials in
-		// Corefile_bak, we should still attempt to read the default credentials file,
+		// Corefile, we should still attempt to read the default credentials file,
 		// ~/.aws/credentials with the default profile.
 		sharedProvider := &credentials.SharedCredentialsProvider{}
 		var providers []credentials.Provider

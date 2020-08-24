@@ -27,7 +27,7 @@ func init() {
 		Directives: func() []string { return Directives },
 		DefaultInput: func() caddy.Input {
 			return caddy.CaddyfileInput{
-				Filepath:       "Corefile_bak",
+				Filepath:       "Corefile",
 				Contents:       []byte(".:" + Port + " {\nwhoami\nlog\n}\n"),
 				ServerTypeName: serverType,
 			}

@@ -10,7 +10,7 @@ import (
 )
 
 func TestEmptySecondaryZone(t *testing.T) {
-	// Corefile_bak that fails to transfer example.org.
+	// Corefile that fails to transfer example.org.
 	corefile := `example.org:0 {
 		secondary {
 			transfer from 127.0.0.1:1717

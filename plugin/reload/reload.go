@@ -1,4 +1,4 @@
-// Package reload periodically checks if the Corefile_bak has changed, and reloads if so.
+// Package reload periodically checks if the Corefile has changed, and reloads if so.
 package reload
 
 import (
@@ -62,7 +62,7 @@ func hook(event caddy.EventName, info interface{}) error {
 		return nil
 	}
 
-	// if reload is removed from the Corefile_bak, then the hook
+	// if reload is removed from the Corefile, then the hook
 	// is still registered but setup is never called again
 	// so we need a flag to tell us not to reload
 	if r.usage() == unused {
@@ -91,7 +91,7 @@ func hook(event caddy.EventName, info interface{}) error {
 				}
 				parsedCorefile, err := parse(corefile)
 				if err != nil {
-					log.Warningf("Corefile_bak parse failed: %s", err)
+					log.Warningf("Corefile parse failed: %s", err)
 					continue
 				}
 				s := md5.Sum(parsedCorefile)
@@ -103,7 +103,7 @@ func hook(event caddy.EventName, info interface{}) error {
 					r.setUsage(maybeUsed)
 					_, err := instance.Restart(corefile)
 					if err != nil {
-						log.Errorf("Corefile_bak changed but reload failed: %s", err)
+						log.Errorf("Corefile changed but reload failed: %s", err)
 						FailedCount.Add(1)
 						continue
 					}

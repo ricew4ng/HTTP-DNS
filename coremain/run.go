@@ -16,11 +16,11 @@ import (
 )
 
 func init() {
-	caddy.DefaultConfigFile = "Corefile_bak"
+	caddy.DefaultConfigFile = "Corefile"
 	caddy.Quiet = true // don't show init stuff from caddy
 	setVersion()
 
-	flag.StringVar(&conf, "conf", "", "Corefile_bak to load (default \""+caddy.DefaultConfigFile+"\")")
+	flag.StringVar(&conf, "conf", "", "Corefile to load (default \""+caddy.DefaultConfigFile+"\")")
 	flag.BoolVar(&plugins, "plugins", false, "List installed plugins")
 	flag.StringVar(&caddy.PidFile, "pidfile", "", "Path to write pid file")
 	flag.BoolVar(&version, "version", false, "Show version")
@@ -69,7 +69,7 @@ func Run() {
 		os.Exit(0)
 	}
 
-	// Get Corefile_bak input
+	// Get Corefile input
 	corefile, err := caddy.LoadCaddyfile(serverType)
 	if err != nil {
 		mustLogFatal(err)
@@ -123,7 +123,7 @@ func confLoader(serverType string) (caddy.Input, error) {
 	}, nil
 }
 
-// defaultLoader loads the Corefile_bak from the current working directory.
+// defaultLoader loads the Corefile from the current working directory.
 func defaultLoader(serverType string) (caddy.Input, error) {
 	contents, err := ioutil.ReadFile(caddy.DefaultConfigFile)
 	if err != nil {

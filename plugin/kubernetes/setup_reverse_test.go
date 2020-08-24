@@ -8,7 +8,7 @@ import (
 
 func TestKubernetesParseReverseZone(t *testing.T) {
 	tests := []struct {
-		input         string   // Corefile_bak data as string
+		input         string   // Corefile data as string
 		expectedZones []string // expected count of defined zones.
 	}{
 		{`kubernetes coredns.local 10.0.0.0/16`, []string{"coredns.local.", "0.10.in-addr.arpa."}},

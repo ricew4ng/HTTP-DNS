@@ -55,7 +55,7 @@ func (n Name) Matches(child string) bool {
 func (n Name) Normalize() string { return strings.ToLower(dns.Fqdn(string(n))) }
 
 type (
-	// Host represents a host from the Corefile_bak, may contain port.
+	// Host represents a host from the Corefile, may contain port.
 	Host string
 )
 

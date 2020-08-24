@@ -31,7 +31,7 @@ PrivateKey: f03VplaIEA+KHI9uizlemUSbUJH86hPBPjmcUninPoM=
 `
 )
 
-// TestReadme parses all README.mds of the plugins and checks if every example Corefile_bak
+// TestReadme parses all README.mds of the plugins and checks if every example Corefile
 // actually works. Each corefile snippet is only used if the language is set to 'corefile':
 //
 // ~~~ corefile

@@ -346,7 +346,7 @@ func (k *Kubernetes) findPods(r recordRequest, zone string) (pods []msg.Service,
 	}
 
 	for _, p := range k.APIConn.PodIndex(ip) {
-		// If namespace has a wildcard, filter results against Corefile_bak namespace list.
+		// If namespace has a wildcard, filter results against Corefile namespace list.
 		if wildcard(namespace) && !k.namespaceExposed(p.Namespace) {
 			continue
 		}
@@ -407,7 +407,7 @@ func (k *Kubernetes) findServices(r recordRequest, zone string) (services []msg.
 			continue
 		}
 
-		// If request namespace is a wildcard, filter results against Corefile_bak namespace list.
+		// If request namespace is a wildcard, filter results against Corefile namespace list.
 		// (Namespaces without a wildcard were filtered before the call to this function.)
 		if wildcard(r.namespace) && !k.namespaceExposed(svc.Namespace) {
 			continue

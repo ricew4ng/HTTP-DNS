@@ -14,7 +14,7 @@ import (
 
 var mu sync.Mutex
 
-// CoreDNSServer returns a CoreDNS test server. It just takes a normal Corefile_bak as input.
+// CoreDNSServer returns a CoreDNS test server. It just takes a normal Corefile as input.
 func CoreDNSServer(corefile string) (*caddy.Instance, error) {
 	mu.Lock()
 	defer mu.Unlock()
@@ -57,7 +57,7 @@ func CoreDNSServerAndPorts(corefile string) (i *caddy.Instance, udp, tcp string,
 	return i, udp, tcp, nil
 }
 
-// Input implements the caddy.Input interface and acts as an easy way to use a string as a Corefile_bak.
+// Input implements the caddy.Input interface and acts as an easy way to use a string as a Corefile.
 type Input struct {
 	corefile []byte
 }
@@ -71,7 +71,7 @@ func NewInput(corefile string) *Input {
 func (i *Input) Body() []byte { return i.corefile }
 
 // Path implements the Input interface.
-func (i *Input) Path() string { return "Corefile_bak" }
+func (i *Input) Path() string { return "Corefile" }
 
 // ServerType implements the Input interface.
 func (i *Input) ServerType() string { return "dns" }

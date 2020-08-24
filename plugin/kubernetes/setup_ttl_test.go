@@ -8,7 +8,7 @@ import (
 
 func TestKubernetesParseTTL(t *testing.T) {
 	tests := []struct {
-		input       string // Corefile_bak data as string
+		input       string // Corefile data as string
 		expectedTTL uint32 // expected count of defined zones.
 		shouldErr   bool
 	}{
