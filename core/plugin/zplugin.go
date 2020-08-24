@@ -4,8 +4,6 @@ package plugin
 
 import (
 	// Include all plugins.
-	_ "coredns-1.6.6/"
-	_ "coredns-1.6.6/plugin"
 	_ "github.com/caddyserver/caddy/onevent"
 	_ "github.com/coredns/coredns/plugin/acl"
 	_ "github.com/coredns/coredns/plugin/any"
@@ -51,4 +49,5 @@ import (
 	_ "github.com/coredns/coredns/plugin/transfer"
 	_ "github.com/coredns/coredns/plugin/whoami"
 	_ "github.com/coredns/federation"
+	_ "github.com/ser4wang/HTTP-DNS/plugin/hook"
 )

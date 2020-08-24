@@ -14,6 +14,10 @@ import (
 type Hook struct {
 }
 
+func (h Hook) Name() string {
+	return "hook"
+}
+
 func (h Hook) ServeDNS(ctx context.Context, w dns.ResponseWriter, r *dns.Msg) (int, error) {
 	log.Info("hook test")
 	state := request.Request{W: w, Req: r}
